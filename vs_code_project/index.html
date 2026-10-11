@@ -3,344 +3,457 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Лабораторная работа №1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .field-error {
+            display: block;
+            margin-top: 5px;
+            color: #c62828;
+            font-size: 14px;
+        }
+
+        input[aria-invalid="true"] {
+            border: 1px solid #c62828;
+        }
+
+        #success-message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Список гиперссылок</h1>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-content">
 
-    <ol>
+            <div class="logo">
+                <img src="logo.jpg" alt="Логотип"
+                        style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%;">
+            </div>
 
-        <!-- 1. Абсолютная ссылка на kubsu.ru -->
-        <li>
-            <a href="http://kubsu.ru">
-                Главная страница kubsu.ru
-            </a>
-        </li>
+            <div class="site-name">
+                Название сайта
+            </div>
 
-        <!-- 2. Абсолютная ссылка через HTTPS -->
-        <li>
-            <a href="https://kubsu.ru">
-                Главная страница kubsu.ru (HTTPS)
-            </a>
-        </li>
+        </div>
 
-        <!-- 3. Ссылка-изображение -->
-        <li>
-            <a href="https://kubsu.ru">
-                <img src="image.jpg" width="150" alt="КубГУ">
-            </a>
-        </li>
+        <!-- Меню -->
+        <nav>
+            <a href="#table">Ссылка 1</a>
+            <a href="#links">Ссылка 2</a>
+            <a href="#form">Ссылка 3</a>
+        </nav>
+    </header>
 
-        <!-- 4. Сокращенная ссылка на внутреннюю страницу -->
-        <li>
-            <a href="/about">
-                Внутренняя страница
-            </a>
-        </li>
+    <!-- Основное содержимое -->
+    <main>
 
-        <!-- 5. Сокращенная ссылка на главную -->
-        <li>
-            <a href="/">
-                Главная страница
-            </a>
-        </li>
+        <!-- Таблица -->
+        <section id="table">
+            <h2>Таблица</h2>
 
-        <!-- 6. Ссылка на фрагмент текущей страницы -->
-        <li>
-            <a href="#form">
-                Перейти к форме
-            </a>
-        </li>
+            <table>
+                <tr>
+                    <th>Название 1</th>
+                    <th>Название 2</th>
+                    <th>Название 3</th>
+                    <th>Название 4</th>
+                </tr>
 
-        <!-- 7. Ссылка с тремя параметрами -->
-        <li>
-            <a href="https://example.com/page?a=1&b=2&c=3">
-                Ссылка с тремя параметрами
-            </a>
-        </li>
+                <tr>
+                    <td>Ячейка 1</td>
+                    <td>Ячейка 2</td>
+                    <td>Ячейка 3</td>
+                    <td>Ячейка 4</td>
+                </tr>
 
-        <!-- 8. Ссылка с параметром id -->
-        <li>
-            <a href="https://example.com/page?id=123">
-                Ссылка с параметром id
-            </a>
-        </li>
+                <tr>
+                    <td>Ячейка 5</td>
+                    <td colspan="2">Объединённые ячейки</td>
+                    <td>Ячейка 8</td>
+                </tr>
 
-        <!-- 9. Относительная ссылка в текущем каталоге -->
-        <li>
-            <a href="page.html">
-                Страница в текущем каталоге
-            </a>
-        </li>
+                <tr>
+                    <td>Ячейка 9</td>
+                    <td>Ячейка 10</td>
+                    <td>Ячейка 11</td>
+                    <td>Ячейка 12</td>
+                </tr>
 
-        <!-- 10. Относительная ссылка в каталоге about -->
-        <li>
-            <a href="about/page.html">
-                Страница в каталоге about
-            </a>
-        </li>
+                <tr>
+                    <td rowspan="2">Объединённые строки</td>
+                    <td>Ячейка 14</td>
+                    <td>Ячейка 15</td>
+                    <td>Ячейка 16</td>
+                </tr>
 
-        <!-- 11. Ссылка на каталог уровнем выше -->
-        <li>
-            <a href="../page.html">
-                Страница уровнем выше
-            </a>
-        </li>
+                <tr>
+                    <td>Ячейка 18</td>
+                    <td>Ячейка 19</td>
+                    <td>Ячейка 20</td>
+                </tr>
+            </table>
+        </section>
 
-        <!-- 12. Ссылка на каталог двумя уровнями выше -->
-        <li>
-            <a href="../../page.html">
-                Страница двумя уровнями выше
-            </a>
-        </li>
+        <!-- Список гиперссылок -->
+        <section id="links">
+            <h2>Список гиперссылок</h2>
 
-        <!-- 13. Контекстная ссылка в тексте абзаца -->
-        <li>
-            <p>
-                Мы изучаем
-                <a href="https://html.spec.whatwg.org/">
-                    HTML
-                </a>
-                для создания веб-страниц.
-            </p>
-        </li>
-
-        <!-- 14. Ссылка на фрагмент стороннего сайта -->
-        <li>
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML#основы_html">
-                Фрагмент стороннего сайта
-            </a>
-        </li>
-
-        <!-- 15. Ссылки из прямоугольной и круглой областей -->
-        <li>
-
-            <img src="image.jpg"
-                 width="300"
-                 height="200"
-                 alt="Картинка"
-                 usemap="#myMap">
-
-            <map name="myMap">
-
-                <area shape="rect"
-                      coords="0,0,150,200"
-                      href="https://kubsu.ru"
-                      alt="Прямоугольная область">
-
-                <area shape="circle"
-                      coords="225,100,50"
-                      href="https://example.com"
-                      alt="Круглая область">
-
-            </map>
-
-        </li>
-
-        <!-- 16. Ссылка с пустым href -->
-        <li>
-            <a href="">
-                Ссылка с пустым href
-            </a>
-        </li>
-
-        <!-- 17. Ссылка без href -->
-        <li>
-            <a>
-                Ссылка без href
-            </a>
-        </li>
-
-        <!-- 18. Ссылка, по которой запрещен переход поисковикам -->
-        <li>
-            <a href="https://example.com"
-               rel="nofollow">
-                Ссылка с запретом перехода поисковикам
-            </a>
-        </li>
-
-        <!-- 19. Ссылка, запрещенная для индексации -->
-        <li>
-            <a href="https://example.com"
-               rel="noindex">
-                Ссылка, запрещенная для индексации
-            </a>
-        </li>
-
-        <!-- 20. Нумерованный список ссылок с title -->
-        <li>
-
-            <ol>
-
+            <ul>
                 <li>
-                    <a href="https://kubsu.ru"
-                       title="Главный сайт КубГУ">
-                        КубГУ
-                    </a>
+                    <a href="https://www.google.com/">Google</a>
                 </li>
-
                 <li>
-                    <a href="https://google.com"
-                       title="Поисковая система">
-                        Google
-                    </a>
+                    <a href="https://www.youtube.com/">YouTube</a>
                 </li>
-
                 <li>
-                    <a href="https://yandex.ru"
-                       title="Поисковая система Яндекс">
-                        Яндекс
-                    </a>
+                    <a href="https://github.com/">GitHub</a>
                 </li>
+            </ul>
+        </section>
 
-            </ol>
+        <!-- Форма -->
+        <section id="form">
+            <h2>Форма</h2>
 
-        </li>
+            <form id="user-form" novalidate>
 
-        <!-- 21. Ссылка на FTP -->
-        <li>
-            <a href="ftp://user:password@example.com/file.txt">
-                Скачать файл по FTP
-            </a>
-        </li>
+                <p>
+                    <label for="fullname">ФИО:</label>
 
-    </ol>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        autocomplete="name"
+                        required
+                        pattern="[А-Яа-яЁёA-Za-z]+([ -][А-Яа-яЁёA-Za-z]+)*"
+                        title="Введите ФИО только буквами. Разрешены пробелы и дефис, цифры запрещены."
+                        aria-describedby="fullname-error">
+
+                    <span
+                        id="fullname-error"
+                        class="field-error"
+                        role="alert">
+                    </span>
+                </p>
+
+                <p>
+                    <label for="phone">Телефон:</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="[0-9]+"
+                        inputmode="numeric"
+                        title="Телефон должен содержать только цифры."
+                        required>
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+                </p>
+
+                <p>
+                    <label for="birthdate">Дата рождения:</label>
+
+                    <input
+                        type="date"
+                        id="birthdate"
+                        name="birthdate"
+                        max="2026-12-31"
+                        required>
+                </p>
+
+                <fieldset>
+                    <legend>Пол:</legend>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                            required>
+                        Мужской
+                    </label>
+
+                    <br>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female">
+                        Женский
+                    </label>
+                </fieldset>
+
+                <p>
+                    <label for="language">
+                        Любимый язык программирования:
+                    </label>
+
+                    <br>
+
+                    <select
+                        id="language"
+                        name="language"
+                        multiple
+                        size="5"
+                        required
+                        title="Выберите хотя бы один язык программирования.">
+
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+
+                    </select>
+                </p>
+
+                <p>
+                    <label for="biography">Биография:</label>
+
+                    <br>
+
+                    <textarea
+                        id="biography"
+                        name="biography"
+                        rows="5"
+                        cols="40"></textarea>
+                </p>
+
+                <p>
+                    <input
+                        type="checkbox"
+                        id="contract"
+                        name="contract"
+                        required>
+
+                    <label for="contract">
+                        С контрактом ознакомлен(а)
+                    </label>
+                </p>
+
+                <p>
+                    <input type="submit" value="Сохранить">
+                </p>
+
+                <p
+                    id="success-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden>
+                    Форма успешно заполнена!
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        (c) Семён Сергеевич Нехаев
+    </footer>
 
 
-    <h1 id="form">Форма</h1>
 
-    <form action="#" method="post">
+    <script>
+        "use strict";
 
-        <!-- 1. ФИО -->
-        <p>
-            <label>
-                ФИО:
-                <input type="text"
-                       name="fullname">
-            </label>
-        </p>
+        const form = document.getElementById("user-form");
+        const fullname = document.getElementById("fullname");
+        const fullnameError = document.getElementById("fullname-error");
+        const phone = document.getElementById("phone");
+        const birthdate = document.getElementById("birthdate");
+        const language = document.getElementById("language");
+        const successMessage = document.getElementById("success-message");
 
-        <!-- 2. Телефон -->
-        <p>
-            <label>
-                Телефон:
-                <input type="tel"
-                       name="phone">
-            </label>
-        </p>
+        const maxBirthdate = "2026-12-31";
 
-        <!-- 3. E-mail -->
-        <p>
-            <label>
-                E-mail:
-                <input type="email"
-                       name="email">
-            </label>
-        </p>
+        const fioPattern =
+            /^[А-Яа-яЁёA-Za-z]+([ -][А-Яа-яЁёA-Za-z]+)*$/;
 
-        <!-- 4. Дата рождения -->
-        <p>
-            <label>
-                Дата рождения:
-                <input type="date"
-                       name="birthdate">
-            </label>
-        </p>
+        birthdate.max = maxBirthdate;
 
-        <!-- 5. Пол -->
-        <p>
-            Пол:
-            <br>
+        // Скрытие сообщения об успехе
+        function hideSuccessMessage() {
+            successMessage.hidden = true;
+        }
 
-            <label>
-                <input type="radio"
-                       name="gender"
-                       value="male">
-                Мужской
-            </label>
+        // Проверка ФИО
+        function validateFullname() {
+            const value = fullname.value.trim();
 
-            <br>
+            if (value === "") {
+                fullname.setCustomValidity("Введите ФИО.");
+                fullnameError.textContent = "";
+                fullname.removeAttribute("aria-invalid");
+                return false;
+            }
 
-            <label>
-                <input type="radio"
-                       name="gender"
-                       value="female">
-                Женский
-            </label>
+            if (!fioPattern.test(value)) {
+                const errorText =
+                    "ФИО: только буквы, пробелы и дефисы. Цифры и другие символы запрещены.";
 
-        </p>
+                fullname.setCustomValidity(errorText);
+                fullnameError.textContent = errorText;
+                fullname.setAttribute("aria-invalid", "true");
 
-        <!-- 6. Любимый язык программирования -->
-        <p>
+                return false;
+            }
 
-            <label>
-                Любимый язык программирования:
-            </label>
+            fullname.setCustomValidity("");
+            fullnameError.textContent = "";
+            fullname.removeAttribute("aria-invalid");
 
-            <br>
+            return true;
+        }
 
-            <select name="languages"
-                    multiple
-                    size="6">
+        // Предупреждение появляется сразу при вводе или вставке цифр
+        fullname.addEventListener("input", function () {
+            validateFullname();
+            hideSuccessMessage();
+        });
 
-                <option value="Pascal">Pascal</option>
-                <option value="C">C</option>
-                <option value="C++">C++</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="PHP">PHP</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="Haskel">Haskel</option>
-                <option value="Clojure">Clojure</option>
-                <option value="Prolog">Prolog</option>
-                <option value="Scala">Scala</option>
+        // Проверка телефона
+        phone.addEventListener("input", function () {
+            phone.setCustomValidity("");
 
-            </select>
+            if (phone.value !== "" && !/^[0-9]+$/.test(phone.value)) {
+                phone.setCustomValidity(
+                    "Телефон должен содержать только цифры."
+                );
+            }
 
-        </p>
+            hideSuccessMessage();
+        });
 
-        <!-- 7. Биография -->
-        <p>
+        // Проверка даты
+        birthdate.addEventListener("change", function () {
+            birthdate.setCustomValidity("");
 
-            <label>
-                Биография:
-            </label>
+            if (
+                birthdate.value !== "" &&
+                birthdate.value > maxBirthdate
+            ) {
+                birthdate.setCustomValidity(
+                    "Дата рождения не может быть позже 31.12.2026."
+                );
+            }
 
-            <br>
+            hideSuccessMessage();
+        });
 
-            <textarea name="biography"
-                      rows="5"
-                      cols="40">
-            </textarea>
+        // Проверка выбора языка
+        language.addEventListener("change", function () {
+            language.setCustomValidity("");
 
-        </p>
+            if (language.selectedOptions.length === 0) {
+                language.setCustomValidity(
+                    "Выберите хотя бы один язык программирования."
+                );
+            }
 
-        <!-- 8. Согласие с контрактом -->
-        <p>
+            hideSuccessMessage();
+        });
 
-            <label>
+        // Скрытие сообщения при изменении остальных полей
+        form.addEventListener("input", function () {
+            hideSuccessMessage();
+        });
 
-                <input type="checkbox"
-                       name="contract">
+        form.addEventListener("change", function () {
+            hideSuccessMessage();
+        });
 
-                С контрактом ознакомлен(а)
+        // Проверка формы без отправки на сервер
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-            </label>
+            hideSuccessMessage();
 
-        </p>
+            // ФИО
+            if (!validateFullname()) {
+                fullname.reportValidity();
+                fullname.focus();
+                return;
+            }
 
-        <!-- 9. Кнопка Сохранить -->
-        <p>
+            // Телефон
+            phone.setCustomValidity("");
 
-            <input type="submit"
-                   value="Сохранить">
+            if (!/^[0-9]+$/.test(phone.value.trim())) {
+                phone.setCustomValidity(
+                    "Телефон должен содержать только цифры."
+                );
 
-        </p>
+                phone.reportValidity();
+                phone.focus();
+                return;
+            }
 
-    </form>
+            // Дата рождения
+            birthdate.setCustomValidity("");
+
+            if (
+                birthdate.value === "" ||
+                birthdate.value > maxBirthdate
+            ) {
+                birthdate.setCustomValidity(
+                    "Укажите дату рождения не позже 31.12.2026."
+                );
+
+                birthdate.reportValidity();
+                birthdate.focus();
+                return;
+            }
+
+            // Проверка выбора хотя бы одного языка
+            language.setCustomValidity("");
+
+            if (language.selectedOptions.length === 0) {
+                language.setCustomValidity(
+                    "Выберите хотя бы один язык программирования."
+                );
+
+                language.reportValidity();
+                language.focus();
+                return;
+            }
+
+            // Проверка всех обязательных полей
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Все проверки пройдены
+            successMessage.hidden = false;
+        });
+    </script>
 
 </body>
-
 </html>
+
